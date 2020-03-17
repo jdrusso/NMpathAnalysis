@@ -98,7 +98,7 @@ class NonMarkovModel(DiscreteEnsemble):
         seq_map = {}
         new_trajs = []
         for seq in self.trajectories:
-            newseq, m_dict = map_to_integers(seq, seq_map)
+            newseq, seq_map = map_to_integers(seq, seq_map)
             new_trajs.append(newseq)
         self.stateA = [seq_map[i] for i in self.stateA]
         self.stateB = [seq_map[i] for i in self.stateB]
